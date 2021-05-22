@@ -3,11 +3,9 @@ import { Dimensions, StyleSheet } from 'react-native';
 export default StyleSheet.create({
     container: {
         flex: 1,
-        width: "100%",
-        height: "100%",
     },
     covidText: {
-        backgroundColor: "black",
+        backgroundColor: "#FC3C0D",
         height: Dimensions.get('screen').height*0.12,
         borderTopLeftRadius: 20,
         borderTopRightRadius: 20,

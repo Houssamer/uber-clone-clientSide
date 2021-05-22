@@ -8,11 +8,11 @@ export default StyleSheet.create({
     },
     input: {
         backgroundColor: "lightgrey",
-        height: 70,
+        height: 65,
         width: "95%",
         justifyContent: "center",
         padding: 10,
-        marginTop: 20,
+        marginTop: 10,
         borderRadius: 10,
         marginBottom: 20,
     },
@@ -22,20 +22,24 @@ export default StyleSheet.create({
         color: "grey",
         marginLeft: 10,
     },
-    home: {
+    options: {
         flexDirection: 'row',
         alignItems: "center",
         justifyContent: "flex-start",
         width: "95%",
-        borderTopWidth: 1,
-        borderTopColor: "lightgrey",
         height: 70,
-        borderRadius: 10,
+        shadowOpacity: 0.7,
         padding: 10,
         marginTop: 10,
     },
-    icon: {
+    home: {
         backgroundColor: "#FC3C0D",
+        padding: 10,
+        borderRadius: 50,
+        marginRight: 10,
+    },
+    icon: {
+        backgroundColor: "lightgrey",
         padding: 10,
         borderRadius: 50,
         marginRight: 10,

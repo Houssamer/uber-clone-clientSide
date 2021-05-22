@@ -43,5 +43,20 @@ export default StyleSheet.create({
         width: 10,
         height: 10,
         backgroundColor: "black",
+    },
+    button: {
+        width: 100,
+        height: 50,
+        backgroundColor: "#FC3C0D",
+        position: "absolute",
+        bottom: 150,
+        left: 150,
+        alignItems: "center",
+        justifyContent: "center",
+        borderRadius: 10,
+    },
+    button_text: {
+        color: "white",
+        fontWeight: "bold",
     }
 })
