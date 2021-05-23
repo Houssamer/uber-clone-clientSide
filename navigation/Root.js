@@ -1,5 +1,4 @@
 import React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import HomeScreen from '../Screens/HomeScreen/HomeScreen';
 import SearchScreen from '../Screens/SearchScreen/SearchScreen';
@@ -11,7 +10,6 @@ const Stack = createStackNavigator();
 
 const Root = () => {
     return (
-        <NavigationContainer>
             <Stack.Navigator 
             initialRouteName="HomeScreen"
             screenOptions={{
@@ -22,7 +20,6 @@ const Root = () => {
                 <Stack.Screen name="SearchScreen" component={SearchScreen}  />
                 <Stack.Screen name="DestinationScreen" component={DestinationScreen}  />
             </Stack.Navigator> 
-        </NavigationContainer>
     )
 }
 

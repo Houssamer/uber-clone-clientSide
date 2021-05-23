@@ -16,7 +16,7 @@ const HomeScreen = () => {
       </View>
       {/** Search component */}
       <HomeSearch />
-
+      
       <StatusBar style="auto" />
     </View>
   );
