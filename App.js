@@ -5,6 +5,11 @@ import DestinationScreen from './Screens/DestinationScreen/DestinationScreen';
 import HomeScreen from './Screens/HomeScreen/HomeScreen';
 import SearchScreen from './Screens/SearchScreen/SearchScreen';
 import DrawerF from './navigation/Drawer';
+import * as Location from 'expo-location';
+
+Location.installWebGeolocationPolyfill();
+navigator.geolocation.getCurrentPosition();
+
 
 export default function App() {
   return (
