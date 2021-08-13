@@ -1,20 +1,27 @@
 import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import DestinationScreen from './Screens/DestinationScreen/DestinationScreen';
-import HomeScreen from './Screens/HomeScreen/HomeScreen';
-import SearchScreen from './Screens/SearchScreen/SearchScreen';
+import React, { useState } from 'react';
+import { StyleSheet } from 'react-native';
 import DrawerF from './navigation/Drawer';
 import * as Location from 'expo-location';
+import SignInScreen from './Screens/SignInScreen/SignInScreen';
 
 Location.installWebGeolocationPolyfill();
 navigator.geolocation.getCurrentPosition();
 
 
 export default function App() {
+  const [user, setUser] = useState();
   return (
     <>
-      <DrawerF />
+    {
+      !user ? (
+        <SignInScreen />
+      )
+      :
+      (
+        <DrawerF />
+      )
+    }
       <StatusBar style="dark" />
     </>
   );
