@@ -3,17 +3,19 @@ import { View, Text, TextInput, TouchableOpacity } from 'react-native';
 import { styles } from './style';
 import { useSpring, animated } from 'react-spring';
 
+const AnimatedView = animated(View);
+
 const SignInScreen = () => {
     const [signUp, setSignUp] = useState(true);
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const props = useSpring({
-        from: {
-            opacity: 0
-        },
-        to: {
-            opacity: 1
-        }
+        opacity: !signUp ? 1 : 0,
+        config: {duration: 1000}
+    })
+    const props1 = useSpring({
+        opacity: signUp ? 1 : 0,
+        config: {duration: 1000}
     })
     return (
         <View style={styles.container}>
@@ -22,7 +24,7 @@ const SignInScreen = () => {
             </View>
             {
                 !signUp ? (
-                    <animated.View style={styles.bottom}>
+                    <AnimatedView style={{...styles.bottom, ...props}}>
                         <View style={styles.inputContainer}>
                             <Text style={styles.inputText}>Email: </Text>
                             <TextInput 
@@ -46,9 +48,9 @@ const SignInScreen = () => {
                             <Text style={styles.firstText}>You don't have an account yet?</Text>
                             <Text style={styles.secondText} onPress={() => setSignUp(true)}>SignUp</Text>
                         </View>
-                    </animated.View>
+                    </AnimatedView>
                 ) : (
-                    <View style={styles.bottom}>
+                    <AnimatedView style={{...styles.bottom, ...props1}}>
                         <View style={styles.inputContainer}>
                             <Text style={styles.inputText}>Num: </Text>
                             <TextInput 
@@ -75,7 +77,7 @@ const SignInScreen = () => {
                             <Text style={styles.firstText}>You already have an account?</Text>
                             <Text style={styles.secondText} onPress={() => setSignUp(false)}>SignIn</Text>
                         </View>
-                    </View>
+                    </AnimatedView>
                 )
             }
         </View>

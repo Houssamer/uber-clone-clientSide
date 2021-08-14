@@ -6,6 +6,7 @@ export const styles = StyleSheet.create({
         width: "100%",
         alignItems: "center",
         justifyContent: "space-evenly",
+        height: Dimensions.get('screen').height,
     },
     welcomeText: {
         fontSize: 50,
